@@ -1,6 +1,6 @@
 # Excel-Data-Transformation
 
-Visual Basic remains the most dreaded developer language<sup>[1]<sup>, but it's still extremely useful for the many that use Excel Spreadsheets. A future translation of the code to Google App Script is not currently in the works, but could be a future development.
+Visual Basic remains the most dreaded developer language<sup>[1], but it's still extremely useful for the many that use Excel Spreadsheets. A future translation of the code to Google App Script is not currently in the works, but could be a future development.
 
 This repo is distrubuted under the MIT License and provides a set of user-defined functions and stored procedures for the transformation, manipulation, and management of data. Enjoy! :punch:
 
