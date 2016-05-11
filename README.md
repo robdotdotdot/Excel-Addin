@@ -13,25 +13,25 @@ Current list of UDFs:
 In each example, the paramters of UDFs are provided as a reference. Please see code comments for details of each parameter
 
 ##### TextTransform
-'''
+```
 Function TextTransform(t, Optional IgnoreCase, _
     Optional IgnoreSpace = False, Optional IgnoreSymbol = False, _
     Optional IgnoreNumber = False, Optional IgnoreQuote = False)
     ...
     ...
 End Function
-'''
+```
 ![Sample usage image for TextTransform](/img/TextTransform.jpg)
 
 ##### RegExTester
-'''
+```
 Function RegExTester(pattern As String, setence As String, _
     Optional outputTrueFalse = False, Optional MatchAll = False, _
     Optional delimiter = ",")
     ...
     ...
 End Function
-'''
+```
 ![Sample usage image for RegExTester](/img/RegExTester.jpg)
 
 
