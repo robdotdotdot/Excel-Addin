@@ -6,12 +6,13 @@ Function TextTransform(t, Optional IgnoreCase, _
     ' the parameters
     '
     ' Note Asc# for symbols: 33-47, 58-64, 91-96, 123-126
+    ' Note Asc# for quotes: 34 & 39
     '-----------------------------------------------------------------
     
 Dim lstSymbols, lstNumbers, lstQuotes
 lstNumbers = "0 1 2 3 4 5 6 7 8 9"
 lstSymbols = "~ ! @ # $ % ^ & * ( ) _ = + - [ ] { } | \ ; ' : , . / ? < > "
-lstQuotes = "Chr(34) Chr(39)"
+lstQuotes = "' """
 
     If IgnoreCase Then
         t = UCase(t)
@@ -23,7 +24,7 @@ lstQuotes = "Chr(34) Chr(39)"
         arrSymbols = Split(lstSymbols, " ")
         
         For i = LBound(arrSymbols) To UBound(arrSymbols)
-            t = Replace(t, arrSymbols(i), " ")
+            t = Replace(t, arrSymbols(i), "")
         Next i
     End If
     
@@ -38,7 +39,7 @@ lstQuotes = "Chr(34) Chr(39)"
     
     If IgnoreQuote Then
         Dim arrQuotes() As String
-        arrQuotes = Split(lstQuotes, "")
+        arrQuotes = Split(lstQuotes, " ")
         
         For i = LBound(arrQuotes) To UBound(arrQuotes)
             t = Replace(t, arrQuotes(i), "")
