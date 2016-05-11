@@ -41,4 +41,10 @@ LOOKUPALL(lookup_value, table_array, col_index_num [, delim = ","])
 ```
 ![Sample usage image for LOOKUPALL](/img/LOOKUPALL.jpg)
 
+##### rearrangeColumns
+```
+Call rearrangeColumns()
+```
+![Sample usage image for rearrangeColumns](/img/rearrangeColumns.gif)
+
 [1]: http://stackoverflow.com/research/developer-survey-2016#technology-most-loved-dreaded-and-wanted
