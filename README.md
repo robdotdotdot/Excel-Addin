@@ -5,6 +5,7 @@ Visual Basic remains the most dreaded developer language<sup>[1]</sup>, but it's
 This repo is distrubuted under the MIT License and provides a set of user-defined functions and stored procedures for the transformation, manipulation, and management of data. Enjoy! :punch:
 
 Current list of UDFs
+
 | Function | Description |
 | :--- | :--- |
 | `TextTransform` | Cleans a string |
@@ -12,6 +13,7 @@ Current list of UDFs
 | `LOOKUPALL` | Modified vlookup that can return matches to a single cell |
 
 Current list of stored procedures
+
 | Procedure| Description |
 | :--- |:--- |
 | `rearrangeColumns` | Rearranges columnar data to your specification |
