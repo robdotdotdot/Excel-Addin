@@ -60,6 +60,6 @@ Call RearrangeColumns()
 ```
 Call CustomFilterBySelection()
 ```
-![Sample usage image for CustomFilterBySelection](/img/rearrangeColumns.gif)
+![Sample usage image for CustomFilterBySelection](/img/CustomFilterBySelection.gif)
 
 [1]: http://stackoverflow.com/research/developer-survey-2016#technology-most-loved-dreaded-and-wanted
