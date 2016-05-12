@@ -16,6 +16,9 @@ Function RegExTester(pattern As String, sentence As String, _
     '   Suggestion on future commit:
     '   Add in error handling for appended return values greater than
     '   32767, as this is the maximum characters a cell can contain
+    '
+    ' Note on future commit/enhancement
+    '   Implement RegEx.replace functionality
     '-----------------------------------------------------------------
 
     Dim RegEx As New VBScript_RegExp_55.RegExp

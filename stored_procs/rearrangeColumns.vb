@@ -1,4 +1,4 @@
-Sub rearrangeColumns()
+Sub RearrangeColumns()
     '-----------------------------------------------------------------
     ' Rearranges columns based on a base list
     '
