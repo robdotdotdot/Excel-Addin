@@ -10,16 +10,18 @@ Current list of UDFs
 | :--- | :--- |
 | `TextTransform` | Cleans a string |
 | `RegExTester` | Test a string for a regex pattern |
-| `LOOKUPALL` | Modified vlookup that can return matches to a single cell |
+| `LOOKUPALL` | Modified lookup that returns all matches of a single value to a single cell |
+| `LOOKUPLIST` | Modified lookup that returns the first match of multiple values to a single cell |
 
 Current list of stored procedures
 
 | Procedure| Description |
 | :--- |:--- |
-| `rearrangeColumns` | Rearranges columnar data to your specification |
+| `RearrangeColumns` | Rearranges columnar data to your specification |
+| `CustomFilterBySelection` | Rearranges columnar data to your specification |
 
 ### Example Usage
-In each example, an abbrevaited version of the of UDFs are provided as a reference. Please see code comments for details of each parameter.
+In each example, an abbrevaited version of the of UDF is provided as a reference. Please see the code comments for parameter details.
 
 ##### TextTransform
 ```
@@ -41,10 +43,23 @@ LOOKUPALL(lookup_value, table_array, col_index_num [, delim = ","])
 ```
 ![Sample usage image for LOOKUPALL](/img/LOOKUPALL.jpg)
 
-##### rearrangeColumns
+##### LOOKUPLIST
 ```
-Call rearrangeColumns()
+LOOKUPLIST(lookup_value, table_array, col_index_num [, lookup_as_num = False,
+    hlook = False, input_delim = ",", output_delim = ","])
+```
+![Sample usage image for LOOKUPLIST](/img/LOOKUPLIST.jpg)
+
+##### RearrangeColumns
+```
+Call RearrangeColumns()
 ```
 ![Sample usage image for rearrangeColumns](/img/rearrangeColumns.gif)
+
+##### CustomFilterBySelection
+```
+Call CustomFilterBySelection()
+```
+![Sample usage image for CustomFilterBySelection](/img/rearrangeColumns.gif)
 
 [1]: http://stackoverflow.com/research/developer-survey-2016#technology-most-loved-dreaded-and-wanted
