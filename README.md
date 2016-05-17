@@ -12,6 +12,7 @@ Current list of UDFs
 | `RegExTester` | Test a string for a regex pattern |
 | `LOOKUPALL` | Modified lookup that returns all matches of a single value to a single cell |
 | `LOOKUPLIST` | Modified lookup that returns the first match of multiple values to a single cell |
+| `arrLOOKUPLIST` | Modifed LOOKUPLIST as an array formula; returns each value to it's own cell |
 
 Current list of stored procedures
 
