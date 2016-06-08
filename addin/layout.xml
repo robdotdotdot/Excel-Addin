@@ -1,1 +1,150 @@
-/Excel Add-In Layout
+<!--/Excel Add-In Layout-->
+<customUI onLoad="ribbonLoaded" xmlns="http://schemas.microsoft.com/office/2006/01/customui">
+	<!--Reference: https://msdn.microsoft.com/en-us/library/dd926139(v=office.12).aspx-->
+	<ribbon startFromScratch="false">
+		<tabs>
+			<tab id="rbnID" label="Ribbon Name" keytip="U">
+				<group id="groupAbout" label="About">
+					<button id="btnAbout" 
+					label="About Developer" 
+					imageMso="HappyFace" 
+					size="large" 
+					onAction="btnAbout_onAction" 
+					keytip="A" />
+				</group>
+
+				<group id="groupCustomTools" label="Custom Tools">
+					<button id="btnSelectionFilter" label="Selection Filter" size="normal" onAction="btnSelectionFilter_onAction" imageMso="Filter" keytip="SF"
+						supertip="Apply a filter based on a list of items. First, select the range of cells to filter out. Then select the field where the filter should be applied."/>
+					<button id="btnColumnJump" label="Jump 2 Column" size="normal" onAction="btnColumnJump_onAction" imageMso="TableColumnsInsertRightExcel" keytip="J"
+						supertip="Conveniently navigate to a column / field. Start by selecting a cell in the header."/>
+				</group>
+
+
+				<group id="groupQuickAccess" label="Quick Access">
+					<splitButton id="splitBtn_FolderLoc" size="normal" keytip="LI">
+						<button id="btn_splitBtn_FolderLoc" imageMso="FileOpenRecentFile" label="Location Info" onAction="btnActiveWBpath_open_onAction" 
+							supertip="Tools related to the file location." />
+						<menu id="menu_splitBtn_FolderLoc">
+							<button id="btnActiveWBpath_open" label="Open Folder" onAction="btnActiveWBpath_open_onAction" imageMso="FileOpen" keytip="F"
+								supertip="Open the folder where the workbook is located."/>
+							<button id="btnActiveWBpath_copy" label="Copy Folder Path" onAction="btnActiveWBpath_copy_onAction" imageMso="Copy"
+								supertip="Copy the path to the folder." />
+							<button id="btnActiveWBpath_show" label="Show Folder Path" onAction="btnActiveWBpath_show_onAction" imageMso="RefreshStatus"
+								supertip="Show the folder location"/>
+							<button id="btnActiveWBfilepath_copy" label="Copy File Path" onAction="btnActiveWBfilepath_copy_onAction" imageMso="Copy" keytip="P"
+								supertip="Copy the path to the file." />
+							<button id="btnActiveWBfilepath_show" label="Show File Path" onAction="btnActiveWBfilepath_show_onAction" imageMso="RefreshStatus"
+								supertip="Show the path to the file." />	
+						</menu>
+					</splitButton>
+					<button id="btnNavToRef" label="Go To Reference" size="normal" onAction="btnNavToRef_onAction" imageMso="WebGoForward" keytip="G"
+						supertip="Open the Excel file referenced in a formula, and navigate to the reference. (i.e. to open external workbooks referenced in a vlookup formula)"/>		
+				</group>
+
+
+				<group id="groupLayouts" label="Custom Layouts">
+					<button id="btnFit1to1" label="Fit 1 (w) to 1 (h)" size="normal" onAction="Fit1to1_onAction" imageMso="PageSizeGallery"
+						supertip="Formats and scales the sheet to fit 1 page wide by 1 page tall "/>	
+					<button id="btnFit1toX" label="Fit 1 (w) to x (h)" size="normal" onAction="Fit1toX_onAction" imageMso="PageSizeGallery"
+						supertip="Formats and scales the sheet to fit a maximum of 1 page wide by as many pages needed height-wise "/>	
+					<button id="btnFitXto1" label="Fit x (w) to 1 (h)" size="normal" onAction="FitXto1_onAction" imageMso="PageSizeGallery"
+						supertip="Formats and scales the sheet to fit a maximum of 1 page tall by as many pages needed width-wise "/>
+
+					<dialogBoxLauncher>
+   						<button id="dlgBtnLayouts" screentip="More Layouts..." onAction="dlgBtnLayouts_onAction"/>
+  					</dialogBoxLauncher>
+				</group>
+
+
+				<group id="groupWindowSize" label="Window Arrangements">
+					<splitButton id="splitBtn_WindowCustom" size="normal" keytip="WC">
+						<button id="btn_splitBtn_WindowSize" imageMso="DrawingCanvasFit" label="Set Custom" onAction="btnShowSizePosition_onAction" 
+							supertip="Custom window options." />
+						<menu id="menu_splitBtn_WindowOptions">
+							<button id="btnShowSizePosition" imageMso="DrawingCanvasFit" onAction="btnShowSizePosition_onAction" keytip="AA" label="Custom"/>
+						</menu>
+
+					</splitButton>
+
+					<splitButton id="splitBtn_WindowSize" size="normal" keytip="WS">
+						<button id="btn_splitBtn_WindowWidth33" imageMso="ObjectEffectShadowGallery" label="Set Window Size" onAction="WindowWidth33_onAction" 
+							supertip="Window sizing options." />
+						<menu id="menu_splitBtn_WindowSize">
+							<button id="btnWindowHeight16" imageMso="ObjectEffectShadowGallery" onAction="WindowHeight16_onAction" keytip="Q" label="16 - Height" />
+							<button id="btnWindowHeight33" imageMso="ObjectEffectShadowGallery" onAction="WindowHeight33_onAction" keytip="W" label="33 - Height"/>
+							<button id="btnWindowHeight50" imageMso="ObjectEffectShadowGallery" onAction="WindowHeight50_onAction" keytip="E" label="50 - Height"/>
+							<button id="btnWindowHeight66" imageMso="ObjectEffectShadowGallery" onAction="WindowHeight66_onAction" keytip="R" label="66 - Height"/>
+							<button id="btnWindowHeight83" imageMso="ObjectEffectShadowGallery" onAction="WindowHeight83_onAction" keytip="T" label="83 - Height"/>
+							<button id="btnWindowHeight100" imageMso="ObjectEffectShadowGallery" onAction="WindowHeight100_onAction" keytip="Y" label="100 - Height"/>
+							<button id="btnWindowWidth16" imageMso="TextFillGradientGallery" onAction="WindowWidth16_onAction" keytip="A" label="16 - Width"/>
+							<button id="btnWindowWidth33" imageMso="TextFillGradientGallery" onAction="WindowWidth33_onAction" keytip="S" label="33 - Width"/>
+							<button id="btnWindowWidth50" imageMso="TextFillGradientGallery" onAction="WindowWidth50_onAction" keytip="D" label="50 - Width" />
+							<button id="btnWindowWidth66" imageMso="TextFillGradientGallery" onAction="WindowWidth66_onAction" keytip="F" label="66 - Width"/>
+							<button id="btnWindowWidth83" imageMso="TextFillGradientGallery" onAction="WindowWidth83_onAction" keytip="G" label="83 - Width"/>
+							<button id="btnWindowWidth100" imageMso="TextFillGradientGallery" onAction="WindowWidth100_onAction" keytip="H" label="100 - Width"/>
+							<button id="btnWindowHigher" imageMso="FillUp" onAction="btnWindowHigher_onAction" keytip="Z" label="Height Up"/>
+							<button id="btnWindowLower" imageMso="FillDown" onAction="btnWindowLower_onAction" keytip="X" label="Height Down"/>
+							<button id="btnWindowWider" imageMso="FillRight" onAction="btnWindowWider_onAction" keytip="V" label="Width Up"/>
+							<button id="btnWindowNarrower" imageMso="FillLeft" onAction="btnWindowNarrower_onAction" keytip="C" label="Width Down"/>	
+						</menu>
+					</splitButton>
+
+					<splitButton id="splitBtn_WindowPosition" size="normal" keytip="WP">
+						<button id="btn_splitBtn_WindowVertical0" imageMso="ShapeOval" label="Set Window Position" onAction="WindowVertical0_onAction" 
+							supertip="Window positioning options." />
+						<menu id="menu_splitBtn_WindowPosition">
+							<button id="btnWindowVertical0" imageMso="ShapeOval" onAction="WindowVertical0_onAction" label="0 - Vertical" />
+							<button id="btnWindowVertical16" imageMso="ShapeOval" onAction="WindowVertical16_onAction" label="16 - Vertical" />
+							<button id="btnWindowVertical33" imageMso="ShapeOval" onAction="WindowVertical33_onAction" label="33 - Vertical" />
+							<button id="btnWindowVertical50" imageMso="ShapeOval" onAction="WindowVertical50_onAction" label="50 - Vertical" />
+							<button id="btnWindowVertical66" imageMso="ShapeOval" onAction="WindowVertical66_onAction"  label="66 - Vertical" />
+							<button id="btnWindowVertical83" imageMso="ShapeOval" onAction="WindowVertical83_onAction"  label="83 - Vertical" />
+							<button id="btnWindowHorizontal0" imageMso="BevelShapeGallery" onAction="WindowHorizontal0_onAction"  label="0 - Horizontal" />
+							<button id="btnWindowHorizontal16" imageMso="BevelShapeGallery" onAction="WindowHorizontal16_onAction"  label="16 - Horizontal" />
+							<button id="btnWindowHorizontal33" imageMso="BevelShapeGallery" onAction="WindowHorizontal33_onAction"  label="33 - Horizontal" />
+							<button id="btnWindowHorizontal50" imageMso="BevelShapeGallery" onAction="WindowHorizontal50_onAction"  label="50 - Horizontal" />
+							<button id="btnWindowHorizontal66" imageMso="BevelShapeGallery" onAction="WindowHorizontal66_onAction"  label="66 - Horizontal" />
+							<button id="btnWindowHorizontal83" imageMso="BevelShapeGallery" onAction="WindowHorizontal83_onAction"  label="83 - Horizontal" />
+							<button id="btnWindowUp" imageMso="ShadowNudgeUpClassic" onAction="btnWindowUp_onAction"  label="Move Up" />
+							<button id="btnWindowDown" imageMso="ShadowNudgeDownClassic" onAction="btnWindowDown_onAction"  label="Move Down" />
+							<button id="btnWindowLeft" imageMso="ShadowNudgeLeftClassic" onAction="btnWindowLeft_onAction"  label="Move Left" />
+							<button id="btnWindowRight" imageMso="ShadowNudgeRightClassic" onAction="btnWindowRight_onAction"  label="Move Right" />	
+						</menu>
+					</splitButton>
+
+					<dialogBoxLauncher>
+   						<button id="dlgBtnWindowSize" screentip="More Window Sizing Options" keytip="WA"/>
+  					</dialogBoxLauncher>
+				</group>
+
+
+				<!--
+				<group id="groupCommands" label="More">
+					<buttonGroup id="btnGroup">
+						<button id="button1" imageMso="Bold" />
+						<button id="button2" imageMso="Italic" />
+						<button id="button3" imageMso="Underline" />
+					</buttonGroup>
+					<toggleButton id="toggleButton" label="Toggle" />
+
+					<dialogBoxLauncher>
+   						<button id="dlgBtn" screentip="Dialog Box Launcher" />
+  					</dialogBoxLauncher>
+				</group>
+				-->
+
+				<group id="groupForms" label="Forms">
+					<gallery id="galForms" label="Forms" itemWidth="400" itemHeight="300" size="large" imageMso="DataFormExcel" columns="2" keytip="F">
+						<button id="btnFormCustomFilter" image="Filter" label="Custom Filter" onAction="btnFormCustomFilter_onAction" />
+						<button id="btnForm2" image="iRates" label="Intrest Rates" onAction="_onAction" />
+						<button id="btnForm3" image="CalcTables" label="Calc Tables" onAction="_onAction" />
+						<button id="btnForm4" image="OtherTables" label="Other Tables" onAction="_onAction"/>
+					</gallery>
+				</group>
+
+
+			</tab>
+		</tabs>
+	</ribbon>
+</customUI>
